@@ -62,11 +62,10 @@ Vagrant.configure("2") do |config|
   #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
   # end
 	
-  # config.vm.provision "file", source: ".", destination: "/etc/nginx/sites-available/"	
-
+	
    config.vm.provision "shell", inline: <<-SHELL
    
-    sudo cp /var/www/default /etc/nginx/sites-available/default
+    sudo cp /var/www/nginx.default /etc/nginx/sites-available/default
 	
 	sudo service nginx stop
 	sudo service nginx start	
